@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import React, { Component} from "react";
+import Api from './services/Api';
+import StatisticList from './components/Statistic/Statistic';
+import Filter from './components/SearchBar/Search';
+export default class App extends Component {
+  state={
+    countries: [],
+    quest: '',
+    error: false,
+    filter:""
+  
+  
+  }
+
+componentDidMount(){
+  this.fetchCountries();
+  
 }
 
-export default App;
+
+
+
+
+fetchCountries=()=>{
+
+ Api
+      .fetchCountry()
+      .then((data) =>
+          this.setState({countries: data.data.Countries})
+      )
+      .catch((error) => this.setState({ error }));
+  
+};
+
+changeFilter = (filter) => {
+  this.setState({filter});
+};
+
+getVisibleCountries = () => {
+  const { countries, filter } = this.state;
+
+  return countries.filter((item) =>
+      item.Country.toLowerCase().includes(filter.toLowerCase())
+  );
+};
+
+
+
+
+render(){
+
+let{filter} = this.state
+
+ let visibleCountries = this.getVisibleCountries();
+  return(<>
+ <img className="logo" src='logo.jpg' alt="logo"></img>
+ <p className ="header_statistic">STATISTIC</p>
+<Filter value ={filter} OnChangeFilter = {this.changeFilter}/>
+  <StatisticList countries = {visibleCountries}/>
+  </>
+  )
+}
+
+
+}
+
+

@@ -1,0 +1,230 @@
+
+thead{
+    position: absolute;
+height: 80px;
+left: 60px;
+right: 60px;
+top: 240px;
+width: 1800px;
+background: #2196F3;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.Number_title{
+    position: absolute;
+width: 86px;
+height: 28px;
+left: 20px;
+top: 20px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #FFFFFF;
+
+}
+
+.Country_title{
+    position: absolute;
+    width: 86px;
+    height: 28px;
+    left: 162px;
+    top: 20px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+color: #ffffff;
+}
+.TotalConfirmed_title{
+    position: absolute;
+width: 173px;
+height: 28px;
+left: 1323px;
+top: 20px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #ffffff;
+
+}
+
+.table_content{
+position: relative;
+display: flex;
+flex-direction: row;
+height: 80px;
+width: 1800px;
+margin: 5px;
+top: 350px;
+left: 60px;
+right: 60px;
+align-items: center;
+
+background: #FFFFFF;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.table_content th{
+    position: absolute;
+
+left: 160px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+}
+.table_content td{
+    position: absolute;
+
+left: 1323px;
+
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+
+color: #000000;
+}
+
+.titleCountryInfo{
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 56px;
+text-align: center;
+color: #000000;
+}
+
+.modalWrapper{
+   
+width: 600px;
+height: 400px;
+left: 660px;
+
+
+background: #FFFFFF;
+border-radius: 20px;
+}
+
+.strongTextInfo{
+ position: relative;
+width: 171px;
+height: 28px;
+left: 40px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+top: 80px;
+
+color: #666666;
+
+}
+.CountInfo{
+   position: relative;
+width: 81px;
+height: 28px;
+left: 270px;
+top: 80px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #666666;
+
+
+}
+
+tbody{
+    border-collapse: collapse;
+    counter-reset: schetchik; 
+}
+tbody .table_content{
+    counter-increment: schetchik;
+}
+
+tbody .table_content::before{
+    content: counter(schetchik);  
+   position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width: 14px;
+height: 28px;
+left: 40px;
+
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+
+}
+.modal_Img{
+    position: relative;
+    left: 0%;
+    right: 0%;
+    top: 80px;
+    bottom: 6.25%;
+
+    
+}
+
+
+@media (max-width: 1300px) {
+    thead{
+        width: 1200px;
+        height: 60px;
+        left: 40px;
+        right: 60px;
+    }
+
+
+        .TotalConfirmed_title{
+          
+        width: 173px;
+        height: 28px;
+        left: 900px;
+        top: 20px;
+      
+    }
+    .table_content{
+       
+        height: 80px;
+        width: 1200px;
+        margin: 5px;
+        top: 320px;
+        left: 40px;
+        right: 60px;}
+
+        .table_content td{
+        
+        left: 900px;}
+        
+}
